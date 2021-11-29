@@ -26,6 +26,15 @@ public class ClienteDTO {
         this.idEndereco = cliente.getEndereco_id();
         this.setEndereco(enderecoDTO);
     }
+    
+    public void GetClienteDTO(Cliente cliente, EnderecoDTO enderecoDTO) {
+    	this.cidade = enderecoDTO.getCidade();
+    	this.uf = enderecoDTO.getUf();
+    	
+    	
+    }
+    
+
 
     public Cliente converterParaCliente() {
         Cliente cliente = new Cliente();

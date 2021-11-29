@@ -27,19 +27,27 @@ public class EnderecoController {
         }
         return dtos;
     }
+    
     @GetMapping("/lambda")
     public List<EnderecoDTO> listarTodosEnderecosUsandoLambda(){
         List<Endereco> enderecoList = enderecoRepository.findAll();
         return enderecoList.stream().map(EnderecoDTO::new)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
+    
     @GetMapping("/{cep}")
     public EnderecoDTO buscarPorCEP(@PathVariable(name = "cep")Integer cep){
         return new EnderecoDTO(enderecoRepository.findFirstByCep(cep));
     }
+    
     @GetMapping("/id/{id}")
     public EnderecoDTO buscarPorCEP(@PathVariable(name = "id")Long id){
         return new EnderecoDTO(enderecoRepository.getById(id));
+    }
+    
+    @GetMapping("/cidade/{cidade}")
+    public EnderecoDTO buscarPorCidade(@PathVariable(name = "cidade")String cidade){
+        return new EnderecoDTO(enderecoRepository.findByCidade(cidade));
     }
 
     @PostMapping("/")

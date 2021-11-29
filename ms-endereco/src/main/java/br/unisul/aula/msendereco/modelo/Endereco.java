@@ -11,7 +11,7 @@ public class Endereco {
     private Long id;
     @Column(nullable = false)
     private String logradouro;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private Integer cep;
     private String bairro;
     private String cidade;

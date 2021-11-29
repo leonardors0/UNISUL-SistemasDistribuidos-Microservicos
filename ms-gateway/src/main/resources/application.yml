@@ -13,7 +13,7 @@ spring:
           predicates:
             - Path=/cli/**
 server:
-  port: ${PORTA:8080}
+  port: 8080
 eureka:
   client:
     fetch-registry: true

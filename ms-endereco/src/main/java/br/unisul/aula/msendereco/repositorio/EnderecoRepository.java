@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
 
     Endereco findFirstByCep(Integer cep);
+    Endereco findByCidade(String cidade);
 
     }
